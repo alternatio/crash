@@ -7,6 +7,7 @@ interface InputBlock2Interface {
 	targetCoefficient: number
 	targetCoefficientIsEnable: boolean
 	handleTargetCoefficient: Function
+	isCrash: boolean
 }
 
 const InputBlock2: FC<InputBlock2Interface> = (props) => {
@@ -19,6 +20,7 @@ const InputBlock2: FC<InputBlock2Interface> = (props) => {
 				<label
 					className={style.label}>
 					<input
+						disabled={!props.targetCoefficientIsEnable}
 						onChange={(e) => {
 							const value = Number(e.target.value)
 							props.setTargetCoefficient(value)
@@ -30,7 +32,9 @@ const InputBlock2: FC<InputBlock2Interface> = (props) => {
 						type="number"/>
 				</label>
 				<div
-					onClick={() => props.handleTargetCoefficient(!props.targetCoefficientIsEnable)}
+					onClick={() => {
+						props.isCrash && props.handleTargetCoefficient(!props.targetCoefficientIsEnable)
+					}}
 					className={style.handler}>
 					<motion.div
 						initial={{background: '#000', x: '0%'}}

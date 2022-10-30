@@ -75,6 +75,10 @@
 .input {
   font-size: inherit;
   box-shadow: 0 0 0 0 #FF1144;
+  transition: .2s ease-in-out;
+  &:disabled {
+    opacity: .5;
+  }
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     display: none;

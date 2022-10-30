@@ -3,6 +3,7 @@
 .content {
   @extend %column-center;
   width: min(100%, 66rem);
+  justify-content: center;
   min-height: 80vh;
   background: $white;
   gap: 1rem;

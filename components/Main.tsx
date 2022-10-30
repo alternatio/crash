@@ -16,41 +16,28 @@ interface MainInterface {
 
 	isCrash: boolean
 	history: number[]
-	coefficient: number
 	moneyIsSeized: boolean
-	setMoney: Function
-	setHistory: Function
-	setTotalWin: Function
-	handleIsCrash: Function
-	handleWinPopup: Function
-	setCoefficient: Function
-	handleMoneyIsSeized: Function
+	startGame: Function
+	giveMoney: Function
 }
 
 const Main: FC<MainInterface> = (props) => {
 	return (
 		<main className={style.main}>
 			<Buttons
-				handleWinPopup={props.handleWinPopup}
 				bet={props.bet}
-				coefficient={props.coefficient}
-				handleIsCrash={props.handleIsCrash}
-				handleMoneyIsSeized={props.handleMoneyIsSeized}
-				history={props.history}
 				isCrash={props.isCrash}
 				money={props.money}
-				setCoefficient={props.setCoefficient}
-				setHistory={props.setHistory}
-				setMoney={props.setMoney}
-				targetCoefficient={props.targetCoefficient}
 				targetCoefficientIsEnable={props.targetCoefficientIsEnable}
 				moneyIsSeized={props.moneyIsSeized}
-				setTotalWin={props.setTotalWin}/>
+				startGame={props.startGame}
+				giveMoney={props.giveMoney}/>
 			<InputBlock1
 				money={props.money}
 				setBet={props.setBet}
 				bet={props.bet}/>
 			<InputBlock2
+				isCrash={props.isCrash}
 				targetCoefficient={props.targetCoefficient}
 				targetCoefficientIsEnable={props.targetCoefficientIsEnable}
 				setTargetCoefficient={props.setTargetCoefficient}
