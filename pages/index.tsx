@@ -11,7 +11,7 @@ const Home = () => {
   const [coefficient, setCoefficient] = useState<number>(1)
   const [isCrash, handleIsCrash] = useState<boolean>(true)
   const [bet, setBet] = useState<number>(0)
-  const [money, setMoney] = useState<number>(500)
+  const [money, setMoney] = useState<number>(100)
   const [moneyIsSeized, handleMoneyIsSeized] = useState<boolean>(true)
   const [targetCoefficient, setTargetCoefficient] = useState<number>(1)
   const [history, setHistory] = useState<number[]>([])
