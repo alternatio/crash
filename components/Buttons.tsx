@@ -23,14 +23,15 @@ const Buttons: FC<ButtonsInterface> = (props) => {
 			<AnimatePresence>
 				{(props.isCrash || !props.targetCoefficientIsEnable || props.moneyIsSeized) && (
 					<motion.button
-						initial={{opacity: 0}}
-						animate={{opacity: 1}}
-						exit={{opacity: 0}}
+						initial={{x: '2rem',marginLeft: '0rem'}}
+						animate={{x: '0rem', marginLeft: '1rem'}}
+						exit={{x: '2rem',marginLeft: '0rem'}}
 						onClick={() => {
 							(props.isCrash && (props.bet <= props.money)) ?
 								props.startGame() :
 								!props.moneyIsSeized && props.giveMoney()
 						}}
+						transition={{duration: .2, type: 'linear'}}
 						className={style.buttonStart}>
 						{props.isCrash ?
 							'Старт' :

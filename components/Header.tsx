@@ -19,10 +19,7 @@ const Header: FC<HeaderInterface> = (props) => {
 			</div>
 			<div className={style.rightPart}>
 				<button
-					onClick={() => {
-						console.log(props.isDarkTheme)
-						props.handleIsDarkTheme(!props.isDarkTheme)
-					}}
+					onClick={() => props.handleIsDarkTheme(!props.isDarkTheme)}
 					className={style.themeButton}>
 					<div className={style.image}>
 						<Image

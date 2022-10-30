@@ -8,7 +8,7 @@ import WinPopup from "../components/winPopup";
 import {getTime} from "../functions/getTime";
 
 const Home = () => {
-  const [isDarkTheme, handleIsDarkTheme] = useState<boolean>(true)
+  const [isDarkTheme, handleIsDarkTheme] = useState<boolean>(false)
   const [coefficient, setCoefficient] = useState<number>(1)
   const [isCrash, handleIsCrash] = useState<boolean>(true)
   const [bet, setBet] = useState<number>(0)

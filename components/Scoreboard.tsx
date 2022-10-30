@@ -13,8 +13,8 @@ const Scoreboard: FC<ScoreboardInterface> = (props) => {
 		<motion.div
 			initial={{background: '#FFF'}}
 			animate={(!props.moneyIsSeized && props.isCrash) ?
-				{background: '#FF1144'} :
-				{background: '#FFF'}}
+				{background: '#FF1144', color: '#FFF'} :
+				{background: '#FFF', color: '#000'}}
 			className={style.scoreboard}>
 			×{props.coefficient.toFixed(2)}
 		</motion.div>

@@ -16,9 +16,10 @@ const History: FC<HistoryInterface> = (props) => {
 					<AnimatePresence
 						key={index}>
 						<motion.div
-							initial={{opacity: 0}}
-							animate={{opacity: 1}}
-							exit={{opacity: 0}}
+							initial={{opacity: 0, y: '5rem'}}
+							animate={{opacity: 1, y: '0rem'}}
+							exit={{opacity: 0, y: '5rem'}}
+							transition={{duration: 2, type: 'spring', stiffness: 400, damping: 100}}
 							className={style.historyItem}>
 							×{value.toFixed(2)}
 						</motion.div>
