@@ -2,7 +2,7 @@
 
 .wrapper {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   background: $white;
@@ -11,6 +11,6 @@
 .content {
   @extend %column-center;
   width: min(100%, 66rem);
-  height: 100%;
+  min-height: 100%;
   gap: 1rem;
 }
