@@ -27,7 +27,7 @@ interface MainInterface {
 	handleMoneyIsSeized: Function
 }
 
-const Main: FC<MainInterface> = React.memo((props) => {
+const Main: FC<MainInterface> = (props) => {
 	return (
 		<main className={style.main}>
 			<Buttons
@@ -59,6 +59,6 @@ const Main: FC<MainInterface> = React.memo((props) => {
 				history={props.history}/>
 		</main>
 	)
-})
+}
 
-export default Main
+export default React.memo(Main)

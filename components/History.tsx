@@ -6,7 +6,7 @@ interface HistoryInterface {
 	history: number[]
 }
 
-const History: FC<HistoryInterface> = React.memo((props) => {
+const History: FC<HistoryInterface> = (props) => {
 	return (
 		<motion.div
 			layout
@@ -27,6 +27,6 @@ const History: FC<HistoryInterface> = React.memo((props) => {
 			})}
 		</motion.div>
 	)
-})
+}
 
-export default History
+export default React.memo(History)

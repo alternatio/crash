@@ -8,7 +8,7 @@ interface InputBlock1Interface {
 	setBet: Function
 }
 
-const InputBlock1: FC<InputBlock1Interface> = React.memo((props) => {
+const InputBlock1: FC<InputBlock1Interface> = (props) => {
 	return (
 		<div className={style.inputBlock}>
 			<div className={style.title}>
@@ -33,6 +33,6 @@ const InputBlock1: FC<InputBlock1Interface> = React.memo((props) => {
 			</motion.label>
 		</div>
 	)
-})
+}
 
-export default InputBlock1
+export default React.memo(InputBlock1)

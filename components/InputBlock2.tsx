@@ -9,7 +9,7 @@ interface InputBlock2Interface {
 	handleTargetCoefficient: Function
 }
 
-const InputBlock2: FC<InputBlock2Interface> = React.memo((props) => {
+const InputBlock2: FC<InputBlock2Interface> = (props) => {
 	return (
 		<div className={style.inputBlock}>
 			<div className={style.title}>
@@ -44,6 +44,6 @@ const InputBlock2: FC<InputBlock2Interface> = React.memo((props) => {
 			</div>
 		</div>
 	)
-})
+}
 
-export default InputBlock2
+export default React.memo(InputBlock2)

@@ -8,7 +8,7 @@ interface ScoreboardInterface {
 	coefficient: number
 }
 
-const Scoreboard: FC<ScoreboardInterface> = React.memo((props) => {
+const Scoreboard: FC<ScoreboardInterface> = (props) => {
 	return (
 		<motion.div
 			initial={{background: '#FFF'}}
@@ -19,6 +19,6 @@ const Scoreboard: FC<ScoreboardInterface> = React.memo((props) => {
 			×{props.coefficient.toFixed(2)}
 		</motion.div>
 	)
-})
+}
 
-export default Scoreboard
+export default React.memo(Scoreboard)

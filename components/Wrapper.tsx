@@ -7,7 +7,7 @@ interface WrapperInterface {
 	isDarkTheme: boolean;
 }
 
-export const Wrapper: FC<WrapperInterface> = React.memo((props) => {
+export const Wrapper: FC<WrapperInterface> = (props) => {
 	return (
 		<motion.div
 			initial={{filter: 'invert(0)'}}
@@ -16,4 +16,6 @@ export const Wrapper: FC<WrapperInterface> = React.memo((props) => {
 			{props.children}
 		</motion.div>
 	)
-})
+}
+
+export default  React.memo(Wrapper)

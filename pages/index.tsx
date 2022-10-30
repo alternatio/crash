@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {Header} from "../components/Header";
+import Header from "../components/Header";
 import {Wrapper} from "../components/Wrapper";
 import React, {useState} from "react";
 import Scoreboard from "../components/Scoreboard";

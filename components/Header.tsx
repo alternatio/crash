@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import style from "/styles/components/Header.module.scss";
 
-export const Header: FC = React.memo(() => {
+const Header: FC = () => {
 	return (
 		<div className={style.header}>
 			<div className={style.logoPart}>
@@ -10,9 +10,15 @@ export const Header: FC = React.memo(() => {
 					*
 				</span>
 			</div>
-			<a className={style.link} target={'_blank'} href="https://github.com/alternatio">
+			<a
+				className={style.link}
+				rel={'noreferrer'}
+				target={'_blank'}
+				href="https://github.com/alternatio">
 				Github
 			</a>
 		</div>
 	)
-})
+}
+
+export default React.memo(Header)

@@ -22,7 +22,7 @@ interface ButtonsInterface {
 	handleMoneyIsSeized: Function
 }
 
-const Buttons: FC<ButtonsInterface> = React.memo((props) => {
+const Buttons: FC<ButtonsInterface> = (props) => {
 	return (
 		<motion.div
 			layout
@@ -71,6 +71,6 @@ const Buttons: FC<ButtonsInterface> = React.memo((props) => {
 			</motion.button>
 		</motion.div>
 	)
-})
+}
 
-export default Buttons
+export default React.memo(Buttons)
