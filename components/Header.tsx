@@ -1,7 +1,14 @@
 import React, {FC} from "react";
 import style from "/styles/components/Header.module.scss";
+import themeIcon from '/images/theme-icon.svg';
+import Image from "next/image";
 
-const Header: FC = () => {
+interface HeaderInterface {
+	handleIsDarkTheme: Function
+	isDarkTheme: boolean
+}
+
+const Header: FC<HeaderInterface> = (props) => {
 	return (
 		<div className={style.header}>
 			<div className={style.logoPart}>
@@ -10,13 +17,27 @@ const Header: FC = () => {
 					*
 				</span>
 			</div>
-			<a
-				className={style.link}
-				rel={'noreferrer'}
-				target={'_blank'}
-				href="https://github.com/alternatio">
-				Github
-			</a>
+			<div className={style.rightPart}>
+				<button
+					onClick={() => {
+						console.log(props.isDarkTheme)
+						props.handleIsDarkTheme(!props.isDarkTheme)
+					}}
+					className={style.themeButton}>
+					<div className={style.image}>
+						<Image
+							src={themeIcon}
+							alt={'theme-icon'}/>
+					</div>
+				</button>
+				<a
+					className={style.link}
+					rel={'noreferrer'}
+					target={'_blank'}
+					href="https://github.com/alternatio">
+					Github
+				</a>
+			</div>
 		</div>
 	)
 }

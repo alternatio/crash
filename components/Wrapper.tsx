@@ -11,9 +11,12 @@ export const Wrapper: FC<WrapperInterface> = (props) => {
 	return (
 		<motion.div
 			initial={{filter: 'invert(0)'}}
-			animate={props.isDarkTheme && {filter: 'invert(1)'}}
-			className={style.content}>
-			{props.children}
+			animate={props.isDarkTheme ? {filter: 'invert(1)'} : {filter: 'invert(0)'}}
+			className={style.wrapper}>
+			<motion.div
+				className={style.content}>
+				{props.children}
+			</motion.div>
 		</motion.div>
 	)
 }

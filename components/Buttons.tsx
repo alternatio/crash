@@ -29,8 +29,7 @@ const Buttons: FC<ButtonsInterface> = (props) => {
 						onClick={() => {
 							(props.isCrash && (props.bet <= props.money)) ?
 								props.startGame() :
-								!props.moneyIsSeized &&
-								props.giveMoney()
+								!props.moneyIsSeized && props.giveMoney()
 						}}
 						className={style.buttonStart}>
 						{props.isCrash ?

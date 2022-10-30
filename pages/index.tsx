@@ -8,7 +8,7 @@ import WinPopup from "../components/winPopup";
 import {getTime} from "../functions/getTime";
 
 const Home = () => {
-  const [isDarkTheme, handleIsDarkTheme] = useState<boolean>(false)
+  const [isDarkTheme, handleIsDarkTheme] = useState<boolean>(true)
   const [coefficient, setCoefficient] = useState<number>(1)
   const [isCrash, handleIsCrash] = useState<boolean>(true)
   const [bet, setBet] = useState<number>(0)
@@ -25,11 +25,15 @@ const Home = () => {
 
     if (exponential) {
       totalMoneyReceived = bet * exponential
-      setMoney(totalMoneyReceived + money)
+      setMoney(totalMoneyReceived + money - bet)
+      console.log('1')
     } else {
       totalMoneyReceived = bet * coefficient
       setMoney(totalMoneyReceived + money)
+      console.log('2')
     }
+
+    console.log(totalMoneyReceived)
 
     setTotalWin(totalMoneyReceived)
     handleWinPopup(true)
@@ -52,12 +56,10 @@ const Home = () => {
         (Math.exp(step / 400) - 1) / (step / (step / 2))
       )
 
-      if (targetCoefficientIsEnable && !innerMoneyIsSeized) {
-        if (exponential >= targetCoefficient) {
-          handleMoneyIsSeized(true)
-          innerMoneyIsSeized = true
-          giveMoney(exponential)
-        }
+      if (targetCoefficientIsEnable && !innerMoneyIsSeized && exponential >= targetCoefficient) {
+        handleMoneyIsSeized(true)
+        innerMoneyIsSeized = true
+        giveMoney(exponential)
       }
       setCoefficient(exponential)
     }
@@ -85,8 +87,10 @@ const Home = () => {
           Crash
         </title>
       </Head>
-      <Header />
       <Wrapper isDarkTheme={isDarkTheme}>
+        <Header
+          handleIsDarkTheme={handleIsDarkTheme}
+          isDarkTheme={isDarkTheme} />
         <WinPopup
           handleWinPopup={handleWinPopup}
           winPopupIsVisible={winPopupIsVisible}

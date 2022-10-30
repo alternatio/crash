@@ -19,6 +19,16 @@
   font-weight: 700;
 }
 
+.rightPart {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.themeButton {
+  cursor: pointer;
+}
+
 .accent {
   @extend %accent;
 }
