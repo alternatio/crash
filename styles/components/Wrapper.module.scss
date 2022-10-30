@@ -1,0 +1,17 @@
+@import '/styles/global/variables';
+
+.content {
+  @extend %column-center;
+  width: min(100%, 66rem);
+  min-height: 80vh;
+  background: $white;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  
+  @media (min-width: 900px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    justify-content: center;
+  }
+}

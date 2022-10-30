@@ -1,0 +1,136 @@
+@import "/styles/global/variables";
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  font-size: 3rem;
+  font-weight: 700;
+
+  width: min(90%, 20rem);
+  border-radius: .5rem;
+  background: $white;
+  color: $black;
+  box-shadow: 0 .25rem .5rem rgba($black, .1);
+  border: $black solid .05rem;
+}
+
+.buttonStart {
+  @extend %button;
+}
+
+.main {
+  width: min(90%, 20rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  
+  @media (min-width: 900px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.buttons {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.money {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem 1.5rem;
+  background: #E8E8E8;
+  border-radius: .5rem;
+  font-size: 1.1rem;
+  //width: 50%;
+}
+
+.inputBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 100%;
+  min-width: 50%;
+  padding: .5rem 1rem;
+  font-size: .9rem;
+  font-weight: 500;
+  border-radius: .5rem;
+  border: $black solid .05rem;
+  cursor: text;
+  transition: .1s ease-in-out;
+}
+
+.input {
+  font-size: inherit;
+  box-shadow: 0 0 0 0 #FF1144;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+.inputWithHandler {
+  width: 100%;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.handler {
+  width: 3.5rem;
+  min-width: 3.5rem;
+  padding: .25rem;
+  background: #E8E8E8;
+  display: flex;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.handlerCircle {
+  height: 1.5rem;
+  background: $black;
+  aspect-ratio: 1/1;
+  border-radius: 5rem;
+  transform: translateX(0%);
+}
+
+.history {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+.historyItem {
+  padding: .5rem;
+  background: #E8E8E8;
+  border-radius: .5rem;
+  max-width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.popup {
+  position: absolute;
+  top: 1rem;
+  background: $white;
+  box-shadow: 0 .5rem 1rem rgba($black, .1);
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transform: translateY(0);
+}
